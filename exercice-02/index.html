@@ -44,29 +44,31 @@
   <button onclick="changeColor()">Changer de couleur</button>
   <button onclick="changeSize()">Agrandir</button>
   <script>
+    /* Callback functions */
+    function cb_setBold( valueIdx, indexIdx, listObj)
+    {
+      listObj[indexIdx].style.fontWeight= "bold";
+    }
+    function cb_changeColor( valueIdx, indexIdx, listObj)
+    {
+      listObj[indexIdx].style.color= "orange";
+    }
+    function cb_changeSize( valueIdx, indexIdx, listObj)
+    {
+      listObj[indexIdx].style.fontSize= "x-large";
+    }
+    /* Main functions */
     function setBold()
     {
-      let allId= document.querySelectorAll("p");
-      for (let idx=0; idx < allId.length; idx++)
-      {
-        allId[idx].style.fontWeight= "bold";
-      }
+      document.body.querySelectorAll("p").forEach(cb_setBold);
     }
     function changeColor()
     {
-      let allId= document.querySelectorAll("p");
-      for (let idx=0; idx < allId.length; idx++)
-      {
-        allId[idx].style.color= "orange";
-      }
+      document.body.querySelectorAll("p").forEach(cb_changeColor);
     }
     function changeSize()
     {
-      let allId= document.querySelectorAll("p");
-      for (let idx=0; idx < allId.length; idx++)
-      {
-        allId[idx].style.fontSize= "x-large";
-      }
+      document.body.querySelectorAll("p").forEach(cb_changeSize);
     }
   </script>
 </body>
